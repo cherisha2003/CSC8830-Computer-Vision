@@ -1,0 +1,9 @@
+.DS_Store
+venv/
+__pycache__/
+*.pyc
+calibration_images/
+calibration_images_original/
+measurement_images/
+*.heic
+*.HEIC

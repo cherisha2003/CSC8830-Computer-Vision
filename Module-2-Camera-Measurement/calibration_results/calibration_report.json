@@ -1,0 +1,103 @@
+{
+    "checkerboard_internal_corners": [
+        9,
+        6
+    ],
+    "square_size_mm": 25.0,
+    "image_resolution": [
+        3024,
+        4032
+    ],
+    "total_images": 36,
+    "accepted_count": 18,
+    "rejected_count": 18,
+    "accepted_images": [
+        "1.jpeg",
+        "10.jpeg",
+        "11.jpeg",
+        "13.jpeg",
+        "14.jpeg",
+        "16.jpeg",
+        "19.jpeg",
+        "2.jpeg",
+        "20.jpeg",
+        "22.jpeg",
+        "23.jpeg",
+        "25.jpeg",
+        "26.jpeg",
+        "28.jpeg",
+        "3.jpeg",
+        "7.jpeg",
+        "8.jpeg",
+        "9.jpeg"
+    ],
+    "rejected_images": [
+        "12.jpeg",
+        "15.jpeg",
+        "17.jpeg",
+        "18.jpeg",
+        "21.jpeg",
+        "24.jpeg",
+        "27.jpeg",
+        "29.jpeg",
+        "30.jpeg",
+        "31.jpeg",
+        "32.jpeg",
+        "33.jpeg",
+        "34.jpeg",
+        "35.jpeg",
+        "36.jpeg",
+        "4.jpeg",
+        "5.jpeg",
+        "6.jpeg"
+    ],
+    "camera_matrix": [
+        [
+            3635.35135119425,
+            0.0,
+            1511.713300929936
+        ],
+        [
+            0.0,
+            3633.1476589422377,
+            2033.2851870008665
+        ],
+        [
+            0.0,
+            0.0,
+            1.0
+        ]
+    ],
+    "distortion_coefficients": [
+        [
+            0.2977079618799948,
+            -1.4586700154474295,
+            0.0,
+            0.0,
+            0.0
+        ]
+    ],
+    "opencv_rms_reprojection_error_pixels": 0.9242025075838938,
+    "mean_per_image_reprojection_error_pixels": 0.9070714712142944,
+    "maximum_per_image_reprojection_error_pixels": 1.1983906030654907,
+    "per_image_errors_pixels": {
+        "1.jpeg": 0.6543216705322266,
+        "10.jpeg": 1.0656105279922485,
+        "11.jpeg": 1.1983906030654907,
+        "13.jpeg": 0.7659724950790405,
+        "14.jpeg": 0.6869400143623352,
+        "16.jpeg": 0.943044126033783,
+        "19.jpeg": 1.0167306661605835,
+        "2.jpeg": 0.6766035556793213,
+        "20.jpeg": 1.1393568515777588,
+        "22.jpeg": 1.1106884479522705,
+        "23.jpeg": 1.1244370937347412,
+        "25.jpeg": 0.7530972361564636,
+        "26.jpeg": 0.7123479843139648,
+        "28.jpeg": 0.8984585404396057,
+        "3.jpeg": 0.7085233330726624,
+        "7.jpeg": 1.012743353843689,
+        "8.jpeg": 0.936170756816864,
+        "9.jpeg": 0.9238492250442505
+    }
+}
