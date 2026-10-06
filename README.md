@@ -2,18 +2,33 @@
 
 **Student:** Cherisha Killari Giribabu  
 **Panther ID:** 002901729  
-**Course:** CSC 8830 – Computer Vision
+**Course:** CSC 8830 – Computer Vision  
+**Semester:** Fall 2026
 
-This repository is the main access point for my CSC 8830 Computer Vision modules. Each module below links to the complete project repository containing the code, documentation, results, and demo materials.
+This repository contains my weekly modules and assignments for CSC 8830 – Computer Vision. All module implementations, documentation, examples, and supporting files are organized in their respective folders within this repository.
 
 ## Modules
 
-| Module | Topic | Repository | Live Demo |
-|---|---|---|---|
-| Module 2 | Camera Measurement | [View Module 2](https://github.com/cherisha2003/CSC8830-Camera-Measurement) |[Streamlit Demo](https://csc8830-camera-measurement-ia4ndc6tsdrg4sqmn24rx6.streamlit.app/) |
-| Module 3 | Image Blurring | [View Module 3](https://github.com/cherisha2003/CSC8830-Module3-Image-Blurring) | [Streamlit Demo](https://csc8830-module3-image-blurring-jshaur3ekyrebw9tuvvfhb.streamlit.app/) |
-| Module 4 | Human Boundary Extraction | [View Module 4](https://github.com/cherisha2003/CSC8830-Module4-Human-Boundaries) | [Streamlit Demo](https://csc8830-module4-human-boundaries-rpetxpgkpxkbfhml8dg2hx.streamlit.app/) |
+### Module 2 – Camera Measurement
+Camera calibration and object measurement using computer vision techniques.
 
-## About
+📁 `Module-2-Camera-Measurement/`
 
-The individual module repositories contain the implementation and supporting materials for each assignment. This repository provides one central location for accessing all completed modules and will be updated as additional modules are completed.
+### Module 3 – Image Blurring
+Implementation and demonstration of image blurring techniques.
+
+📁 `Module-3-Image-Blurring/`
+
+### Module 4 – Human Boundary Extraction
+Human boundary extraction from RGB and thermal images using classical computer vision methods, with comparison to SAM2.
+
+📁 `Module-4-Human-Boundaries/`
+
+### Modules 5 & 6
+Combined coursework for Modules 5 and 6.
+
+📁 `Module-5-and-6/`
+
+---
+
+Each module folder contains its own README/documentation, source code, requirements, examples, and other files required for that assignment.
