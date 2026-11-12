@@ -1056,20 +1056,8 @@ with room_tab:
 
                     k1, k2, k3 = st.columns(3)
 
-                    k1.write(
-                        "Frame 1:",
-                        len(
-                            st.session_state["room_pts1"]
-                        ),
-                        "selected",
-                    )
-                    k2.write(
-                        "Frame 2:",
-                        len(
-                            st.session_state["room_pts2"]
-                        ),
-                        "selected",
-                    )
+                    k1.write(f"Frame 1: {len(st.session_state['room_pts1'])} selected")
+                    k2.write(f"Frame 2: {len(st.session_state['room_pts2'])} selected")
 
                     if k3.button("Clear room points"):
                         st.session_state["room_pts1"] = []
