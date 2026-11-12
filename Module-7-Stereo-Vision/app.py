@@ -209,14 +209,14 @@ with measure_tab:
 with room_tab:
     st.subheader('Task 3 · Room measurement using video frames')
     st.write('Upload either room video, or use one of the included recordings. Select two frames from the **same video**, estimate camera pose, then mark corresponding room points. This is a real feature-based reconstruction prototype, not a guaranteed complete floor plan.')
-    room_choice=st.selectbox('Room video', ['Video 1 · IMG_4932.mp4','Video 2 · IMG_4936.mp4','Upload my own video'])
+    room_choice=st.selectbox('Room video', ['Video 1 · Module7_Room_Video_1.mp4','Video 2 · Module7_Room_Video_2.mp4','Upload my own video'])
     video_file=None
     if room_choice.startswith('Upload'):
         video_file=st.file_uploader('Upload MP4 or MOV',type=['mp4','mov','m4v'],key='room_upload')
         if video_file is None:
             st.info('Upload a video to begin; the preloaded recordings are also available.')
     else:
-        video_path=BASE/'room_videos'/('IMG_4932.mp4' if 'Video 1' in room_choice else 'IMG_4936.mp4')
+        video_path=BASE/'room_videos'/('Module7_Room_Video_1.mp4' if 'Video 1' in room_choice else 'Module7_Room_Video_2.mp4')
         if not video_path.exists(): st.error('Sample recording missing from deployed repository.')
     if video_file is not None:
         # Reuse a local temporary file only when its identity changes.
