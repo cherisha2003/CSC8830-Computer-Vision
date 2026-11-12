@@ -1,5 +1,0 @@
-streamlit>=1.36,<2
-streamlit-image-coordinates>=0.1.9
-opencv-python-headless>=4.8,<5
-numpy>=1.26,<3
-Pillow>=10,<12
