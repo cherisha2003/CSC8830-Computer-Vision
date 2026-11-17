@@ -1206,26 +1206,31 @@ with room_tab:
 # TASK 2 - UNCALIBRATED DERIVATION
 # ---------------------------------------------------
 
+
 with deriv_tab:
-    st.subheader(
-        "Task 2 · Handwritten derivation"
-    )
+    st.subheader("Task 2 · Uncalibrated Stereo Derivation")
 
     st.write(
-        "The professor requires handwritten, scanned "
-        "derivations of uncalibrated stereo. "
-        "This application does not replace them."
+        "This section contains my handwritten derivations "
+        "for estimating object dimensions using uncalibrated stereo."
     )
 
-    st.write(
-        "Outline: correspondence → fundamental matrix "
-        "and epipolar constraint → canonical projective "
-        "cameras → triangulation → metric ambiguity "
-        "→ constraints needed for physical measurements."
-    )
+    pdf_path = BASE / "derivations.pdf"
 
-    st.warning(
-        "Uncalibrated stereo reconstruction has "
-        "projective ambiguity. Absolute physical "
-        "dimensions require additional constraints."
-    )
+    if pdf_path.is_file():
+        st.success("Handwritten derivations available — 6 pages.")
+
+        st.download_button(
+            label="Download Handwritten Derivations PDF",
+            data=pdf_path.read_bytes(),
+            file_name="derivations.pdf",
+            mime="application/pdf",
+        )
+
+        st.caption(
+            "Includes epipolar geometry, fundamental matrix, "
+            "eight-point algorithm, triangulation, projective "
+            "ambiguity, and object-size calculations."
+        )
+    else:
+        st.error("Task 2 PDF not found in the Module 7 folder.")
