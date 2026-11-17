@@ -105,7 +105,7 @@ cal_tab, measure_tab, room_tab, deriv_tab = st.tabs(
         "1 · Camera calibration",
         "2 · Object measurement",
         "3 · Room video analysis",
-        "4 · Uncalibrated derivation (plan)",
+        "4 · Uncalibrated derivation ",
     ]
 )
 
@@ -1207,30 +1207,38 @@ with room_tab:
 # ---------------------------------------------------
 
 
+
 with deriv_tab:
     st.subheader("Task 2 · Uncalibrated Stereo Derivation")
 
     st.write(
-        "This section contains my handwritten derivations "
-        "for estimating object dimensions using uncalibrated stereo."
+        "Handwritten derivations showing the mathematical "
+        "procedure for estimating object dimensions "
+        "using uncalibrated stereo."
     )
 
     pdf_path = BASE / "derivations.pdf"
 
     if pdf_path.is_file():
-        st.success("Handwritten derivations available — 6 pages.")
+        import base64
 
-        st.download_button(
-            label="Download Handwritten Derivations PDF",
-            data=pdf_path.read_bytes(),
-            file_name="derivations.pdf",
-            mime="application/pdf",
+        pdf_bytes = pdf_path.read_bytes()
+        pdf_base64 = base64.b64encode(pdf_bytes).decode("utf-8")
+
+        pdf_html = f"""
+        <iframe
+            src="data:application/pdf;base64,{pdf_base64}"
+            width="100%"
+            height="850"
+            style="border: 1px solid #ddd; border-radius: 8px;"
+        ></iframe>
+        """
+
+        st.components.v1.html(
+            pdf_html,
+            height=870,
+            scrolling=True
         )
 
-        st.caption(
-            "Includes epipolar geometry, fundamental matrix, "
-            "eight-point algorithm, triangulation, projective "
-            "ambiguity, and object-size calculations."
-        )
     else:
-        st.error("Task 2 PDF not found in the Module 7 folder.")
+        st.error("Task 2 PDF not found.")
