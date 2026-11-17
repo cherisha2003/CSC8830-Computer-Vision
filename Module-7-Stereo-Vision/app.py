@@ -1207,38 +1207,49 @@ with room_tab:
 # ---------------------------------------------------
 
 
-
 with deriv_tab:
     st.subheader("Task 2 · Uncalibrated Stereo Derivation")
 
     st.write(
-        "Handwritten derivations showing the mathematical "
-        "procedure for estimating object dimensions "
-        "using uncalibrated stereo."
+        "Handwritten mathematical derivations for estimating "
+        "object dimensions using uncalibrated stereo."
     )
 
     pdf_path = BASE / "derivations.pdf"
 
     if pdf_path.is_file():
-        import base64
+        import fitz
+        from PIL import Image
 
-        pdf_bytes = pdf_path.read_bytes()
-        pdf_base64 = base64.b64encode(pdf_bytes).decode("utf-8")
+        pdf = fitz.open(str(pdf_path))
 
-        pdf_html = f"""
-        <iframe
-            src="data:application/pdf;base64,{pdf_base64}"
-            width="100%"
-            height="850"
-            style="border: 1px solid #ddd; border-radius: 8px;"
-        ></iframe>
-        """
+        st.success(f"Handwritten derivations — {len(pdf)} pages")
 
-        st.components.v1.html(
-            pdf_html,
-            height=870,
-            scrolling=True
-        )
+        for page_number in range(len(pdf)):
+            page = pdf.load_page(page_number)
+
+            pix = page.get_pixmap(
+                matrix=fitz.Matrix(1.5, 1.5),
+                alpha=False
+            )
+
+            img = Image.frombytes(
+                "RGB",
+                [pix.width, pix.height],
+                pix.samples
+            )
+
+            st.markdown(f"#### Page {page_number + 1}")
+
+            st.image(
+                img,
+                use_container_width=True
+            )
+
+            if page_number < len(pdf) - 1:
+                st.divider()
+
+        pdf.close()
 
     else:
-        st.error("Task 2 PDF not found.")
+        st.error("Task 2 PDF not found in Module 7 folder.")
