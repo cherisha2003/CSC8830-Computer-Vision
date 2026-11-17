@@ -1241,10 +1241,12 @@ with deriv_tab:
 
             st.markdown(f"#### Page {page_number + 1}")
 
-            st.image(
-                img,
-                use_container_width=True
-            )
+            left, center, right = st.columns([1, 3, 1])
+            with center:
+                st.image(
+                    img,
+                    use_container_width=True
+                )
 
             if page_number < len(pdf) - 1:
                 st.divider()
