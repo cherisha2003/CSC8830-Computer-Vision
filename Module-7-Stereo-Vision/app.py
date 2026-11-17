@@ -1207,49 +1207,31 @@ with room_tab:
 # ---------------------------------------------------
 
 
+
 with deriv_tab:
     st.subheader("Task 2 · Uncalibrated Stereo Derivation")
 
     st.write(
-        "Handwritten mathematical derivations for estimating "
-        "object dimensions using uncalibrated stereo."
+        "This section contains my handwritten derivations "
+        "for estimating object dimensions using uncalibrated stereo."
     )
 
     pdf_path = BASE / "derivations.pdf"
 
     if pdf_path.is_file():
-        import fitz
-        from PIL import Image
+        st.success("Handwritten derivations available — 6 pages.")
 
-        pdf = fitz.open(str(pdf_path))
+        st.download_button(
+            label="Download Handwritten Derivations PDF",
+            data=pdf_path.read_bytes(),
+            file_name="derivations.pdf",
+            mime="application/pdf",
+        )
 
-        st.success(f"Handwritten derivations — {len(pdf)} pages")
-
-        for page_number in range(len(pdf)):
-            page = pdf.load_page(page_number)
-
-            pix = page.get_pixmap(
-                matrix=fitz.Matrix(1.5, 1.5),
-                alpha=False
-            )
-
-            img = Image.frombytes(
-                "RGB",
-                [pix.width, pix.height],
-                pix.samples
-            )
-
-            st.markdown(f"#### Page {page_number + 1}")
-
-            st.image(
-                img,
-                use_container_width=True
-            )
-
-            if page_number < len(pdf) - 1:
-                st.divider()
-
-        pdf.close()
-
+        st.caption(
+            "Includes epipolar geometry, fundamental matrix, "
+            "eight-point algorithm, triangulation, projective "
+            "ambiguity, and object-size calculations."
+        )
     else:
-        st.error("Task 2 PDF not found in Module 7 folder.")
+        st.error("Task 2 PDF not found in the Module 7 folder.")
